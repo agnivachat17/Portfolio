@@ -501,8 +501,8 @@
   <p>Built with intention. <a href="mailto:agnivachat17@gmail.com">agnivachat17@gmail.com</a></p>
 </footer>
 
-<!-- <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script> -->
-<!-- <script>
+ <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script> 
+<script>
 // POPUP
 function closePopup(){const o=document.getElementById("welcomePopup");o.style.opacity="0";o.style.pointerEvents="none";setTimeout(()=>o.style.display="none",500);sessionStorage.setItem("popupSeen","1");}
 if(!sessionStorage.getItem("popupSeen")){setTimeout(()=>{const o=document.getElementById("welcomePopup");o.style.display="flex";requestAnimationFrame(()=>requestAnimationFrame(()=>o.classList.add("open")));},1400);}else{document.getElementById("welcomePopup").style.display="none";}
@@ -550,6 +550,5 @@ const obs=new IntersectionObserver((entries)=>{entries.forEach((e,i)=>{if(e.isIn
 document.querySelectorAll(".reveal").forEach(el=>obs.observe(el));
 document.addEventListener("keydown",e=>{if(e.key==="Escape"){closeDrawer();closePhoneModal();}});
 </script>
-  -->
 </body>
 </html>
