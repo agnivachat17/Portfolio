@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Work & Projects</title>
-  <link rel="icon" href="favicon.ico">
+<link rel="icon" href="favicon.ico">
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -118,11 +118,11 @@
   .currently-item:last-child { border-bottom:none; }
   .currently-item:hover { padding-left:0.5rem;border-color:var(--border-hover); }
   .currently-item-icon { width:42px;height:42px;border-radius:10px;background:var(--surface);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;flex-shrink:0;color:var(--muted); }
-  .currently-item-content { flex:1; }
+  .currently-item-content { flex:1;min-width:0; }
   .currently-item-label { font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:0.25rem; }
   .currently-item-title { font-family:var(--font-display);font-size:1rem;font-weight:700;color:var(--text);margin-bottom:0.2rem; }
   .currently-item-sub { font-size:0.82rem;color:var(--muted);font-weight:300; }
-  .currently-item-status { font-size:0.68rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:0.25rem 0.65rem;border-radius:100px;flex-shrink:0; }
+  .currently-item-status { font-size:0.68rem;font-weight:500;letter-spacing:0.06em;text-transform:uppercase;padding:0.25rem 0.65rem;border-radius:100px;flex-shrink:0;white-space:nowrap; }
   .status-live { background:rgba(200,255,71,0.1);color:var(--accent);border:1px solid rgba(200,255,71,0.25); }
   .status-building { background:rgba(255,107,71,0.1);color:var(--accent3);border:1px solid rgba(255,107,71,0.25); }
   .status-studying { background:rgba(77,255,196,0.1);color:var(--accent2);border:1px solid rgba(77,255,196,0.25); }
@@ -170,8 +170,18 @@
   .reveal { opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease; }
   .reveal.visible { opacity:1;transform:translateY(0); }
 
-  /* FLOAT CLUSTER — always visible, both buttons side by side */
-  .float-cluster { position:fixed;bottom:2rem;right:2rem;z-index:90;display:flex;flex-direction:row;gap:0.55rem;align-items:center; }
+  /* FLOAT CLUSTER — scroll-aware hide */
+  .float-cluster {
+    position:fixed;bottom:2rem;right:2rem;z-index:90;
+    display:flex;flex-direction:row;gap:0.55rem;align-items:center;
+    transition:opacity 0.35s ease, transform 0.35s ease, visibility 0.35s;
+  }
+  .float-cluster.hidden {
+    opacity:0;
+    transform:translateY(12px);
+    pointer-events:none;
+    visibility:hidden;
+  }
   .back-float-btn { display:flex;align-items:center;gap:0.55rem;padding:0.7rem 1.1rem;background:var(--surface);border:1px solid var(--border-hover);border-radius:100px;font-family:var(--font-display);font-size:0.78rem;font-weight:700;color:var(--text);text-decoration:none;transition:border-color 0.25s,background 0.25s,transform 0.2s;backdrop-filter:blur(20px); }
   .back-float-btn:hover { border-color:var(--accent);background:rgba(200,255,71,0.06);transform:translateY(-2px); }
   .back-float-icon { width:20px;height:20px;border-radius:5px;background:rgba(200,255,71,0.12);border:1px solid rgba(200,255,71,0.3);display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0; }
@@ -221,22 +231,131 @@
   .footer-home-btn svg { flex-shrink:0; }
   .footer-bottom { display:flex;justify-content:space-between;align-items:center;padding-top:1.5rem;border-top:1px solid var(--border); }
 
+  /* ===================== MOBILE ===================== */
   @media (max-width: 900px) {
     html, body { cursor: auto; }
     #cursor-dot, #cursor-ring { display: none; }
-    nav { padding: 1rem 1.5rem; }
+
+    /* NAV */
+    nav { padding: 1rem 1.25rem; }
     .nav-links { display: none; }
-    section { padding: 4rem 1.5rem; }
-    .page-hero { padding: 7rem 1.5rem 3rem; }
-    .exp-item { grid-template-columns: 1fr; gap: 0.75rem; }
-    .projects-grid { grid-template-columns: 1fr; }
-    .project-card.wide, .project-card.wide2 { grid-column: span 1; flex-direction: column; gap: 1.5rem; }
-    .wide-right, .wide2-right { flex: unset; width: 100%; }
-    .achievements-row, .resume-grid, .collab-inner, .currently-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .divider { margin: 0 1.5rem; width: calc(100% - 3rem); }
-    .float-cluster { right: 1rem; bottom: 1rem; }
+
+    /* PAGE HERO */
+    .page-hero { padding: 7rem 1.25rem 3rem; }
+    .page-hero h1 { font-size: clamp(2rem, 10vw, 3rem); line-height: 1; margin-bottom: 1.25rem; }
+    .page-hero p { font-size: 0.9rem; }
+    .page-nav-pills { gap: 0.5rem; margin-top: 1.5rem; }
+    .page-nav-pill { font-size: 0.72rem; padding: 0.35rem 0.85rem; }
+
+    /* SECTIONS */
+    section { padding: 3.5rem 1.25rem; }
+    .section-header { margin-bottom: 2rem; }
+    .section-title { font-size: clamp(1.5rem, 6vw, 2rem); }
+    .divider { margin: 0 1.25rem; width: calc(100% - 2.5rem); }
+
+    /* EXPERIENCE */
+    .exp-item {
+      grid-template-columns: 1fr;
+      gap: 0.65rem;
+      padding: 1.75rem 0;
+    }
+    .exp-meta { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
+    .exp-period { margin-bottom: 0; }
+    .exp-content h3 { font-size: 1.05rem; }
+    .exp-company { font-size: 0.82rem; margin-bottom: 0.75rem; }
+    .exp-bullets li { font-size: 0.85rem; }
+
+    /* PROJECTS */
+    .projects-grid { grid-template-columns: 1fr; gap: 1rem; }
+    .project-card { padding: 1.5rem; border-radius: 14px; }
+    .project-card::before { display: none; }
+
+    .project-card.wide,
+    .project-card.wide2 {
+      grid-column: span 1;
+      flex-direction: column;
+      gap: 1.5rem;
+      padding: 1.5rem;
+    }
+    .wide-left, .wide-left { flex: unset; width: 100%; }
+    .wide-right { flex: unset; width: 100%; }
+    .wide2-right {
+      flex: unset;
+      width: 100%;
+      flex-direction: row;
+      gap: 0.75rem;
+    }
+    .metric-card { flex: 1; }
+    .metric-num { font-size: 1.4rem; }
+
+    .project-title { font-size: 1.1rem !important; }
+    .project-desc { font-size: 0.82rem; }
+
+    /* ACHIEVEMENTS */
+    .achievements-row {
+      grid-template-columns: 1fr;
+      gap: 0.85rem;
+    }
+    .achievement-card { padding: 1.5rem; border-radius: 14px; display: flex; align-items: center; gap: 1.25rem; text-align: left; }
+    .achievement-num { font-size: 2rem; flex-shrink: 0; margin-bottom: 0; }
+    .achievement-label { font-size: 0.82rem; }
+
+    /* CURRENTLY */
+    .currently-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .currently-left h2 { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+    .currently-left p { max-width: 100%; }
+    .currently-item { gap: 1rem; padding: 1.25rem 0; align-items: flex-start; }
+    .currently-item-icon { width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0; }
+    .currently-item-content { min-width: 0; }
+    .currently-item-title { font-size: 0.9rem; }
+    .currently-item-sub { font-size: 0.78rem; }
+    .currently-item-status { font-size: 0.62rem; padding: 0.2rem 0.55rem; }
+
+    /* RESUME */
+    .resume-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    .resume-left h2 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
+    .resume-actions { flex-direction: column; gap: 0.75rem; }
+    .resume-dl-btn, .resume-view-btn { justify-content: center; padding: 0.85rem 1.25rem; font-size: 0.85rem; }
+    .resume-highlight { gap: 0.75rem; padding: 0.9rem 0; }
+    .resume-highlight-icon { width: 30px; height: 30px; }
+    .resume-highlight-title { font-size: 0.85rem; }
+    .resume-highlight-sub { font-size: 0.74rem; }
+
+    /* COLLAB */
+    .collab-inner { grid-template-columns: 1fr; gap: 2rem; }
+    .collab-text h2 { font-size: clamp(1.8rem, 8vw, 2.5rem); }
+    .collab-role { padding: 0.9rem 1rem; border-radius: 12px; }
+    .collab-role-icon { width: 30px; height: 30px; border-radius: 7px; }
+    .collab-role-name { font-size: 0.88rem; }
+    .collab-role-sub { font-size: 0.72rem; }
+
+    /* FLOAT CLUSTER */
+    .float-cluster { right: 1rem; bottom: 1rem; gap: 0.45rem; }
+    .back-float-btn { padding: 0.6rem 0.9rem; font-size: 0.72rem; gap: 0.45rem; }
+    .letstalk-float-btn { padding: 0.6rem 0.9rem; font-size: 0.72rem; gap: 0.45rem; }
+    .back-float-icon { width: 18px; height: 18px; }
+
+    /* DRAWER mobile */
+    .contact-drawer { padding: 1.5rem; }
+    .drawer-title { font-size: 1.3rem; }
+    .form-row { grid-template-columns: 1fr; gap: 0; }
+    .role-chips { gap: 0.4rem; }
+    .role-chip { font-size: 0.74rem; padding: 0.35rem 0.75rem; }
+    .submit-btn { font-size: 0.95rem; padding: 1rem; }
+
+    /* FOOTER */
+    footer { padding: 2rem 1.25rem 1.5rem; }
     .footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
     .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
+    .footer-home-btn { font-size: 0.82rem; padding: 0.8rem 1.5rem; }
+  }
+
+  @media (max-width: 480px) {
+    .page-hero h1 { font-size: clamp(1.75rem, 9vw, 2.5rem); }
+    .currently-item { flex-wrap: nowrap; }
+    .currently-item-status { align-self: flex-start; margin-top: 0.15rem; }
+    .wide2-right { flex-direction: column; }
+    .metric-card { padding: 0.85rem 1rem; }
   }
 </style>
 </head>
@@ -245,8 +364,8 @@
 <div id="cursor-dot"></div>
 <div id="cursor-ring"></div>
 
-<!-- FLOAT CLUSTER — always visible -->
-<div class="float-cluster">
+<!-- FLOAT CLUSTER -->
+<div class="float-cluster" id="floatCluster">
   <a href="index.html" class="back-float-btn">
     <div class="back-float-icon">
       <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
@@ -648,7 +767,7 @@
 </div>
 
 <!-- FOOTER -->
-<footer>
+<footer id="site-footer">
   <div class="footer-inner">
     <div>
       <p style="font-family:var(--font-display);font-size:1.1rem;font-weight:700;color:var(--text);letter-spacing:-0.02em;margin-bottom:0.3rem;">AG<span style="color:var(--accent);">.</span></p>
@@ -678,6 +797,33 @@ document.querySelectorAll('a,button,.project-card,.achievement-card,.currently-i
   el.addEventListener('mouseenter',()=>document.body.classList.add('cursor-hover'));
   el.addEventListener('mouseleave',()=>document.body.classList.remove('cursor-hover'));
 });
+
+// FLOAT CLUSTER — hide near top AND near bottom (footer zone)
+const floatCluster = document.getElementById('floatCluster');
+const footer = document.getElementById('site-footer');
+
+function updateFloatVisibility() {
+  const scrollY = window.scrollY;
+  const windowH = window.innerHeight;
+  const docH = document.documentElement.scrollHeight;
+
+  // Hide near top (within 80px of top)
+  const nearTop = scrollY < 80;
+
+  // Hide when footer is visible (float would overlap)
+  const footerTop = footer.getBoundingClientRect().top;
+  const nearBottom = footerTop < windowH + 10;
+
+  if (nearTop || nearBottom) {
+    floatCluster.classList.add('hidden');
+  } else {
+    floatCluster.classList.remove('hidden');
+  }
+}
+
+window.addEventListener('scroll', updateFloatVisibility, { passive: true });
+// Init on load
+updateFloatVisibility();
 
 // DRAWER
 function openDrawer(){document.getElementById('contactDrawer').classList.add('open');document.getElementById('drawerOverlay').classList.add('open');document.body.style.overflow='hidden';}
