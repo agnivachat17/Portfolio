@@ -78,19 +78,31 @@
   .project-card:hover { border-color:rgba(200,255,71,0.25);transform:translateY(-4px); }
   .project-card.wide { grid-column:span 2;background:linear-gradient(135deg,#0E1218 0%,#141820 60%,#0a120a 100%);border-color:rgba(200,255,71,0.15);display:flex;align-items:flex-start;gap:3rem;padding:2.5rem; }
   .project-card.wide2 { grid-column:span 2;background:linear-gradient(135deg,#0E1218 0%,#14181e 50%,#0a0e18 100%);border-color:rgba(77,255,196,0.15);display:flex;align-items:flex-start;gap:3rem;padding:2.5rem; }
+  /* NEW: wide3 for Hospital (Java/MySQL accent - orange-ish) */
+  .project-card.wide3 { grid-column:span 2;background:linear-gradient(135deg,#0E1218 0%,#181410 60%,#120a08 100%);border-color:rgba(255,107,71,0.18);display:flex;align-items:flex-start;gap:3rem;padding:2.5rem; }
+  .project-card.wide3:hover { border-color:rgba(255,107,71,0.35);transform:translateY(-4px); }
+  /* NEW: wide4 for IoT Car (blue/teal accent) */
+  .project-card.wide4 { grid-column:span 2;background:linear-gradient(135deg,#0E1218 0%,#0e1420 60%,#080e18 100%);border-color:rgba(100,180,255,0.18);display:flex;align-items:flex-start;gap:3rem;padding:2.5rem; }
+  .project-card.wide4:hover { border-color:rgba(100,180,255,0.35);transform:translateY(-4px); }
   .wide-left { flex:1;min-width:0; }
   .wide-right { flex:0 0 260px; }
   .wide2-right { flex:0 0 240px;display:flex;flex-direction:column;gap:1rem; }
+  .wide3-right { flex:0 0 260px; }
+  .wide4-right { flex:0 0 260px; }
   .jack-badge { display:inline-flex;align-items:center;gap:0.5rem;font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);background:rgba(200,255,71,0.08);border:1px solid rgba(200,255,71,0.2);border-radius:100px;padding:0.3rem 0.75rem;margin-bottom:0.75rem; }
+  .java-badge { display:inline-flex;align-items:center;gap:0.5rem;font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent3);background:rgba(255,107,71,0.08);border:1px solid rgba(255,107,71,0.25);border-radius:100px;padding:0.3rem 0.75rem;margin-bottom:0.75rem; }
+  .iot-badge { display:inline-flex;align-items:center;gap:0.5rem;font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#64B4FF;background:rgba(100,180,255,0.08);border:1px solid rgba(100,180,255,0.25);border-radius:100px;padding:0.3rem 0.75rem;margin-bottom:0.75rem; }
   .jack-badge-dot { width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s ease-in-out infinite; }
   @keyframes pulse { 0%,100%{box-shadow:0 0 0 0 rgba(200,255,71,0.5);}50%{box-shadow:0 0 0 6px rgba(200,255,71,0);} }
   .feature-panel { background:rgba(200,255,71,0.03);border:1px solid rgba(200,255,71,0.12);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;gap:0.85rem; }
+  .feature-panel-orange { background:rgba(255,107,71,0.03);border:1px solid rgba(255,107,71,0.12);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;gap:0.85rem; }
+  .feature-panel-blue { background:rgba(100,180,255,0.03);border:1px solid rgba(100,180,255,0.12);border-radius:14px;padding:1.5rem;display:flex;flex-direction:column;gap:0.85rem; }
   .jack-feature { display:flex;align-items:flex-start;gap:0.6rem;font-size:0.8rem;color:var(--muted);font-weight:300; }
   .jack-feature-dot { width:4px;height:4px;border-radius:50%;background:var(--accent2);margin-top:0.45rem;flex-shrink:0; }
+  .jack-feature-dot-orange { width:4px;height:4px;border-radius:50%;background:var(--accent3);margin-top:0.45rem;flex-shrink:0; }
+  .jack-feature-dot-blue { width:4px;height:4px;border-radius:50%;background:#64B4FF;margin-top:0.45rem;flex-shrink:0; }
   .jack-feature-title { color:var(--text);font-weight:500;font-size:0.8rem;margin-bottom:0.1rem; }
   .metric-card { background:rgba(77,255,196,0.04);border:1px solid rgba(77,255,196,0.12);border-radius:12px;padding:1rem 1.25rem;text-align:center; }
-  .metric-num { font-family:var(--font-display);font-size:1.8rem;font-weight:800;color:var(--accent2);letter-spacing:-0.03em;line-height:1; }
-  .metric-label { font-size:0.72rem;color:var(--muted);font-weight:300;margin-top:0.25rem;text-transform:uppercase;letter-spacing:0.06em; }
   .project-tag { font-size:0.7rem;font-weight:500;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent2);margin-bottom:1rem; }
   .project-title { font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:var(--text);letter-spacing:-0.01em;margin-bottom:0.75rem;line-height:1.2; }
   .project-desc { font-size:0.875rem;color:var(--muted);font-weight:300;line-height:1.7;margin-bottom:1.25rem; }
@@ -98,6 +110,17 @@
   .stack-badge { font-size:0.72rem;color:var(--muted);background:rgba(255,255,255,0.05);border:1px solid var(--border);border-radius:4px;padding:0.2rem 0.55rem; }
   .project-link { display:inline-flex;align-items:center;gap:0.35rem;font-size:0.8rem;font-weight:500;color:var(--accent);text-decoration:none;margin-top:1.25rem;transition:gap 0.2s; }
   .project-link:hover { gap:0.6rem; }
+  .project-link-orange { display:inline-flex;align-items:center;gap:0.35rem;font-size:0.8rem;font-weight:500;color:var(--accent3);text-decoration:none;margin-top:1.25rem;transition:gap 0.2s; }
+  .project-link-orange:hover { gap:0.6rem; }
+  .project-link-blue { display:inline-flex;align-items:center;gap:0.35rem;font-size:0.8rem;font-weight:500;color:#64B4FF;text-decoration:none;margin-top:1.25rem;transition:gap 0.2s; }
+  .project-link-blue:hover { gap:0.6rem; }
+
+  /* project sub-feature list */
+  .proj-feature-list { list-style:none;display:flex;flex-direction:column;gap:0.45rem;margin-top:0.1rem; }
+  .proj-feature-list li { font-size:0.82rem;color:var(--muted);padding-left:1rem;position:relative;font-weight:300;line-height:1.5; }
+  .proj-feature-list li::before { content:'→';position:absolute;left:0;color:var(--accent3);font-size:0.72rem;top:0.15rem; }
+  .proj-feature-list.blue li::before { color:#64B4FF; }
+  .proj-links-row { display:flex;gap:1rem;flex-wrap:wrap;margin-top:1.25rem; }
 
   /* ACHIEVEMENTS */
   #achievements { background:var(--bg2); }
@@ -170,7 +193,7 @@
   .reveal { opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease; }
   .reveal.visible { opacity:1;transform:translateY(0); }
 
-  /* FLOAT CLUSTER — scroll-aware hide */
+  /* FLOAT CLUSTER */
   .float-cluster {
     position:fixed;bottom:2rem;right:2rem;z-index:90;
     display:flex;flex-direction:row;gap:0.55rem;align-items:center;
@@ -220,6 +243,9 @@
   .success-sub { font-size:0.9rem;color:var(--muted);font-weight:300;line-height:1.6;max-width:320px; }
   .char-count { font-size:0.72rem;color:var(--muted);text-align:right;margin-top:0.35rem; }
 
+  /* section label for features/highlights in project cards */
+  .panel-section-label { font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.5rem; }
+
   /* FOOTER */
   footer { padding:3rem 3rem 2rem; border-top:1px solid var(--border); background:var(--bg2); }
   .footer-inner { display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem; }
@@ -236,82 +262,61 @@
     html, body { cursor: auto; }
     #cursor-dot, #cursor-ring { display: none; }
 
-    /* NAV */
     nav { padding: 1rem 1.25rem; }
     .nav-links { display: none; }
 
-    /* PAGE HERO */
     .page-hero { padding: 7rem 1.25rem 3rem; }
     .page-hero h1 { font-size: clamp(2rem, 10vw, 3rem); line-height: 1; margin-bottom: 1.25rem; }
     .page-hero p { font-size: 0.9rem; }
     .page-nav-pills { gap: 0.5rem; margin-top: 1.5rem; }
     .page-nav-pill { font-size: 0.72rem; padding: 0.35rem 0.85rem; }
 
-    /* SECTIONS */
     section { padding: 3.5rem 1.25rem; }
     .section-header { margin-bottom: 2rem; }
     .section-title { font-size: clamp(1.5rem, 6vw, 2rem); }
     .divider { margin: 0 1.25rem; width: calc(100% - 2.5rem); }
 
-    /* EXPERIENCE */
-    .exp-item {
-      grid-template-columns: 1fr;
-      gap: 0.65rem;
-      padding: 1.75rem 0;
-    }
+    .exp-item { grid-template-columns: 1fr; gap: 0.65rem; padding: 1.75rem 0; }
     .exp-meta { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; }
     .exp-period { margin-bottom: 0; }
     .exp-content h3 { font-size: 1.05rem; }
     .exp-company { font-size: 0.82rem; margin-bottom: 0.75rem; }
     .exp-bullets li { font-size: 0.85rem; }
 
-    /* PROJECTS */
     .projects-grid { grid-template-columns: 1fr; gap: 1rem; }
     .project-card { padding: 1.5rem; border-radius: 14px; }
     .project-card::before { display: none; }
 
     .project-card.wide,
-    .project-card.wide2 {
+    .project-card.wide2,
+    .project-card.wide3,
+    .project-card.wide4 {
       grid-column: span 1;
       flex-direction: column;
       gap: 1.5rem;
       padding: 1.5rem;
     }
-    .wide-left, .wide-left { flex: unset; width: 100%; }
-    .wide-right { flex: unset; width: 100%; }
-    .wide2-right {
-      flex: unset;
-      width: 100%;
-      flex-direction: row;
-      gap: 0.75rem;
-    }
-    .metric-card { flex: 1; }
+    .wide-left, .wide3-left, .wide4-left { flex: unset; width: 100%; }
+    .wide-right, .wide3-right, .wide4-right { flex: unset; width: 100%; }
+    .wide2-right { flex: unset; width: 100%; flex-direction: row; gap: 0.75rem; }
     .metric-num { font-size: 1.4rem; }
-
     .project-title { font-size: 1.1rem !important; }
     .project-desc { font-size: 0.82rem; }
 
-    /* ACHIEVEMENTS */
-    .achievements-row {
-      grid-template-columns: 1fr;
-      gap: 0.85rem;
-    }
+    .achievements-row { grid-template-columns: 1fr; gap: 0.85rem; }
     .achievement-card { padding: 1.5rem; border-radius: 14px; display: flex; align-items: center; gap: 1.25rem; text-align: left; }
     .achievement-num { font-size: 2rem; flex-shrink: 0; margin-bottom: 0; }
     .achievement-label { font-size: 0.82rem; }
 
-    /* CURRENTLY */
     .currently-grid { grid-template-columns: 1fr; gap: 2rem; }
     .currently-left h2 { font-size: clamp(1.8rem, 8vw, 2.5rem); }
     .currently-left p { max-width: 100%; }
     .currently-item { gap: 1rem; padding: 1.25rem 0; align-items: flex-start; }
     .currently-item-icon { width: 36px; height: 36px; border-radius: 8px; flex-shrink: 0; }
-    .currently-item-content { min-width: 0; }
     .currently-item-title { font-size: 0.9rem; }
     .currently-item-sub { font-size: 0.78rem; }
     .currently-item-status { font-size: 0.62rem; padding: 0.2rem 0.55rem; }
 
-    /* RESUME */
     .resume-grid { grid-template-columns: 1fr; gap: 2.5rem; }
     .resume-left h2 { font-size: clamp(1.6rem, 7vw, 2.2rem); }
     .resume-actions { flex-direction: column; gap: 0.75rem; }
@@ -321,7 +326,6 @@
     .resume-highlight-title { font-size: 0.85rem; }
     .resume-highlight-sub { font-size: 0.74rem; }
 
-    /* COLLAB */
     .collab-inner { grid-template-columns: 1fr; gap: 2rem; }
     .collab-text h2 { font-size: clamp(1.8rem, 8vw, 2.5rem); }
     .collab-role { padding: 0.9rem 1rem; border-radius: 12px; }
@@ -329,13 +333,11 @@
     .collab-role-name { font-size: 0.88rem; }
     .collab-role-sub { font-size: 0.72rem; }
 
-    /* FLOAT CLUSTER */
     .float-cluster { right: 1rem; bottom: 1rem; gap: 0.45rem; }
     .back-float-btn { padding: 0.6rem 0.9rem; font-size: 0.72rem; gap: 0.45rem; }
     .letstalk-float-btn { padding: 0.6rem 0.9rem; font-size: 0.72rem; gap: 0.45rem; }
     .back-float-icon { width: 18px; height: 18px; }
 
-    /* DRAWER mobile */
     .contact-drawer { padding: 1.5rem; }
     .drawer-title { font-size: 1.3rem; }
     .form-row { grid-template-columns: 1fr; gap: 0; }
@@ -343,11 +345,13 @@
     .role-chip { font-size: 0.74rem; padding: 0.35rem 0.75rem; }
     .submit-btn { font-size: 0.95rem; padding: 1rem; }
 
-    /* FOOTER */
     footer { padding: 2rem 1.25rem 1.5rem; }
     .footer-inner { flex-direction: column; gap: 1.5rem; text-align: center; }
     .footer-bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
     .footer-home-btn { font-size: 0.82rem; padding: 0.8rem 1.5rem; }
+
+    .proj-links-row { gap: 0.75rem; }
+    .feature-panel-orange, .feature-panel-blue { padding: 1.25rem; gap: 0.7rem; }
   }
 
   @media (max-width: 480px) {
@@ -356,6 +360,7 @@
     .currently-item-status { align-self: flex-start; margin-top: 0.15rem; }
     .wide2-right { flex-direction: column; }
     .metric-card { padding: 0.85rem 1rem; }
+    .proj-links-row { flex-direction: column; gap: 0.6rem; }
   }
 </style>
 </head>
@@ -438,7 +443,7 @@
         <span class="exp-type-badge badge-content">Content · Growth</span>
       </div>
       <div class="exp-content">
-        <h3>Digital Content Strategist <span style="font-weight:300;color:var(--muted);"></span></h3>
+        <h3>Digital Content Strategist</h3>
         <p class="exp-company">Client: The Bengali Guide (YouTube) — Grew to 60K+ Subscribers</p>
         <ul class="exp-bullets">
           <li>Drove SEO strategy and content planning for a client's educational YouTube channel, scaling it to 60,000+ subscribers</li>
@@ -473,7 +478,7 @@
       </div>
       <div class="wide-right">
         <div class="feature-panel">
-          <p style="font-size:0.7rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:0.25rem;">Core Features</p>
+          <p class="panel-section-label">Core Features</p>
           <div class="jack-feature"><div class="jack-feature-dot"></div><div><div class="jack-feature-title">Natural Language Control</div>Understands context and multi-step instructions</div></div>
           <div class="jack-feature"><div class="jack-feature-dot"></div><div><div class="jack-feature-title">Task Automation</div>Executes real-world actions across apps</div></div>
           <div class="jack-feature"><div class="jack-feature-dot"></div><div><div class="jack-feature-title">Cross-Platform</div>Runs seamlessly on desktop and mobile</div></div>
@@ -500,19 +505,57 @@
       </div>
     </div>
 
-    <div class="project-card reveal">
-      <p class="project-tag">Java · Backend</p>
-      <h3 class="project-title">Hospital Management System</h3>
-      <p class="project-desc">A database-driven system for managing patient records, appointments, and hospital operations. Built with Java and MySQL, demonstrating strong OOP principles and backend logic.</p>
-      <div class="project-stack"><span class="stack-badge">Java</span><span class="stack-badge">MySQL</span><span class="stack-badge">CRUD</span><span class="stack-badge">OOP</span></div>
-      <a href="https://github.com/agnivachat17" class="project-link" target="_blank">View on GitHub →</a>
+    <!-- Hospital Management System -->
+    <div class="project-card wide3 reveal">
+      <div class="wide-left">
+        <div class="java-badge">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+          Java · Backend · Desktop
+        </div>
+        <h3 class="project-title" style="font-size:1.5rem;">Hospital Management System</h3>
+        <p class="project-desc">A desktop-based hospital management system built using Java Swing and MySQL to manage patients, doctors, and appointments with a GUI-driven interface.</p>
+        <div class="project-stack">
+          <span class="stack-badge">Java</span><span class="stack-badge">Swing</span><span class="stack-badge">MySQL</span><span class="stack-badge">JDBC</span><span class="stack-badge">OOP</span>
+        </div>
+        <a href="https://github.com/agnivachat17/Hospital-Management-System" class="project-link-orange" target="_blank">View on GitHub →</a>
+      </div>
+      <div class="wide3-right">
+        <div class="feature-panel-orange">
+          <p class="panel-section-label">Key Features</p>
+          <div class="jack-feature"><div class="jack-feature-dot-orange"></div><div><div class="jack-feature-title">Patient & Doctor CRUD</div>Full create, read, update, delete operations for records</div></div>
+          <div class="jack-feature"><div class="jack-feature-dot-orange"></div><div><div class="jack-feature-title">GUI Desktop Interface</div>Intuitive Java Swing-based application UI</div></div>
+          <div class="jack-feature"><div class="jack-feature-dot-orange"></div><div><div class="jack-feature-title">Relational DB Design</div>Structured MySQL schema with normalized tables</div></div>
+          <div class="jack-feature"><div class="jack-feature-dot-orange"></div><div><div class="jack-feature-title">Appointment Scheduling</div>Patient–doctor mapping with time slot management</div></div>
+        </div>
+      </div>
     </div>
 
-    <div class="project-card reveal">
-      <p class="project-tag">IoT · Hardware</p>
-      <h3 class="project-title">Arduino Smart Car</h3>
-      <p class="project-desc">An IoT-based vehicle with voice and gesture controls. Integrated hardware sensors with real-time software control — bridging physical and digital interaction design.</p>
-      <div class="project-stack"><span class="stack-badge">Arduino</span><span class="stack-badge">IoT</span><span class="stack-badge">Sensors</span><span class="stack-badge">Embedded Systems</span></div>
+    <!-- IoT Smart Car -->
+    <div class="project-card wide4 reveal">
+      <div class="wide-left">
+        <div class="iot-badge">
+          <svg width="8" height="8" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>
+          IoT · Embedded · Hardware
+        </div>
+        <h3 class="project-title" style="font-size:1.5rem;">Arduino Smart Car — Gesture & Voice Controlled</h3>
+        <p class="project-desc">An IoT-based smart vehicle controlled via accelerometer gestures and voice commands using Arduino and Bluetooth modules. Processes real-time sensor data to enable seamless wireless control, demonstrating deep integration of hardware and embedded systems.</p>
+        <div class="project-stack">
+          <span class="stack-badge">Arduino</span><span class="stack-badge">Embedded C</span><span class="stack-badge">MPU6050</span><span class="stack-badge">HC-05 Bluetooth</span><span class="stack-badge">IoT</span>
+        </div>
+        <div class="proj-links-row">
+          <a href="https://github.com/agnivachat17/IoT-Gesture-Voice-Car" class="project-link-blue" target="_blank">GitHub →</a>
+          <a href="https://drive.google.com/file/d/1pvvLkXKhZsDPaUif28rP9EINUDBoUvBN/view?usp=drivesdk" class="project-link-blue" target="_blank" style="opacity:0.8;">Demo Video →</a>
+        </div>
+      </div>
+      <div class="wide4-right">
+        <div class="feature-panel-blue">
+          <p class="panel-section-label">Key Features</p>
+          <div class="jack-feature"><div class="jack-feature-dot-blue"></div><div><div class="jack-feature-title">Gesture Control</div>Tilt navigation via MPU6050 accelerometer</div></div>
+          <div class="jack-feature"><div class="jack-feature-dot-blue"></div><div><div class="jack-feature-title">Voice Commands</div>Bluetooth-driven command execution interface</div></div>
+          <div class="jack-feature"><div class="jack-feature-dot-blue"></div><div><div class="jack-feature-title">Wireless Communication</div>Real-time HC-05 Bluetooth control system</div></div>
+          <div class="jack-feature"><div class="jack-feature-dot-blue"></div><div><div class="jack-feature-title">Sensor Integration</div>Embedded logic fused with hardware sensors</div></div>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -625,7 +668,7 @@
       <p>Four years of building, designing, and growing — summarised. Download or view online.</p>
       <div class="resume-actions">
         <a href="https://drive.google.com/uc?export=download&id=1P7Tjm-RJbfRfFbVTSObpj63gtEEppM90" download="Agniva_Chatterjee_Resume.pdf" class="resume-dl-btn" target="_blank">↓ Download PDF</a>
-        <a href="https://drive.google.com/file/d/1P7Tjm-RJbfRfFbVTSObpj63gtEEppM90/view" target="_blank" class="resume-view-btn">View Online &#8599;&#65038;&#65038;</a>
+        <a href="https://drive.google.com/file/d/1P7Tjm-RJbfRfFbVTSObpj63gtEEppM90/view" target="_blank" class="resume-view-btn">View Online &#8599;</a>
       </div>
       <p class="resume-note"><span class="resume-note-dot"></span>Last updated: 2025 · PDF format · 2 pages</p>
     </div>
@@ -688,7 +731,7 @@
           </div>
           <div><div class="collab-role-name">Design Role</div><div class="collab-role-sub">UI/UX, brand identity, marketing assets</div></div>
         </div>
-        <span class="collab-role-arrow">&#8599;&#65038;&#65038;</span>
+        <span class="collab-role-arrow">&#8599;</span>
       </a>
       <a href="index.html#contact" class="collab-role" onclick="openDrawer(); return false;">
         <div class="collab-role-left">
@@ -697,7 +740,7 @@
           </div>
           <div><div class="collab-role-name">Marketing / Growth Role</div><div class="collab-role-sub">SEO, social strategy, content, funnels</div></div>
         </div>
-        <span class="collab-role-arrow">&#8599;&#65038;&#65038;</span>
+        <span class="collab-role-arrow">&#8599;</span>
       </a>
       <a href="index.html#contact" class="collab-role" onclick="openDrawer(); return false;">
         <div class="collab-role-left">
@@ -706,7 +749,7 @@
           </div>
           <div><div class="collab-role-name">Tech / Dev Role</div><div class="collab-role-sub">Backend systems, web dev, AI tools</div></div>
         </div>
-        <span class="collab-role-arrow">&#8599;&#65038;&#65038;</span>
+        <span class="collab-role-arrow">&#8599;</span>
       </a>
       <a href="index.html#contact" class="collab-role" onclick="openDrawer(); return false;">
         <div class="collab-role-left">
@@ -715,7 +758,7 @@
           </div>
           <div><div class="collab-role-name">Freelance / Collaboration</div><div class="collab-role-sub">Projects, consulting, partnerships</div></div>
         </div>
-        <span class="collab-role-arrow">&#8599;&#65038;&#65038;</span>
+        <span class="collab-role-arrow">&#8599;</span>
       </a>
     </div>
   </div>
@@ -804,16 +847,9 @@ const footer = document.getElementById('site-footer');
 
 function updateFloatVisibility() {
   const scrollY = window.scrollY;
-  const windowH = window.innerHeight;
-  const docH = document.documentElement.scrollHeight;
-
-  // Hide near top (within 80px of top)
   const nearTop = scrollY < 80;
-
-  // Hide when footer is visible (float would overlap)
   const footerTop = footer.getBoundingClientRect().top;
-  const nearBottom = footerTop < windowH + 10;
-
+  const nearBottom = footerTop < window.innerHeight + 10;
   if (nearTop || nearBottom) {
     floatCluster.classList.add('hidden');
   } else {
@@ -822,7 +858,6 @@ function updateFloatVisibility() {
 }
 
 window.addEventListener('scroll', updateFloatVisibility, { passive: true });
-// Init on load
 updateFloatVisibility();
 
 // DRAWER
